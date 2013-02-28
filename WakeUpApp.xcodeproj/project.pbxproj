@@ -18,9 +18,14 @@
 		C0E7844B16D5264E00BB407F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E7844A16D5264E00BB407F /* Default-568h@2x.png */; };
 		C0E7844E16D5264E00BB407F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E7844D16D5264E00BB407F /* ViewController.m */; };
 		C0E7845116D5264E00BB407F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E7844F16D5264E00BB407F /* ViewController.xib */; };
+		C0E7845816D5274900BB407F /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E7845716D5274900BB407F /* BluetoothManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C01330B216DA00C90017995B /* BluetoothDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothDevice.h; sourceTree = "<group>"; };
+		C01330B316DA00C90017995B /* BluetoothManager-BluetoothManagerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BluetoothManager-BluetoothManagerPrivate.h"; sourceTree = "<group>"; };
+		C01330B416DA00C90017995B /* BluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
+		C01330B516DA00C90017995B /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
 		C0E7843116D5264E00BB407F /* WakeUpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeUpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E7843416D5264E00BB407F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0E7843616D5264E00BB407F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +42,7 @@
 		C0E7844C16D5264E00BB407F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C0E7844D16D5264E00BB407F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0E7845016D5264E00BB407F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C0E7845716D5274900BB407F /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothManager.framework; path = System/Library/PrivateFrameworks/BluetoothManager.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 				C0E7843516D5264E00BB407F /* UIKit.framework in Frameworks */,
 				C0E7843716D5264E00BB407F /* Foundation.framework in Frameworks */,
 				C0E7843916D5264E00BB407F /* CoreGraphics.framework in Frameworks */,
+				C0E7845816D5274900BB407F /* BluetoothManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +80,7 @@
 		C0E7843316D5264E00BB407F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0E7845716D5274900BB407F /* BluetoothManager.framework */,
 				C0E7843416D5264E00BB407F /* UIKit.framework */,
 				C0E7843616D5264E00BB407F /* Foundation.framework */,
 				C0E7843816D5264E00BB407F /* CoreGraphics.framework */,
@@ -83,6 +91,10 @@
 		C0E7843A16D5264E00BB407F /* WakeUpApp */ = {
 			isa = PBXGroup;
 			children = (
+				C01330B216DA00C90017995B /* BluetoothDevice.h */,
+				C01330B316DA00C90017995B /* BluetoothManager-BluetoothManagerPrivate.h */,
+				C01330B416DA00C90017995B /* BluetoothManager.h */,
+				C01330B516DA00C90017995B /* CDStructures.h */,
 				C0E7844316D5264E00BB407F /* AppDelegate.h */,
 				C0E7844416D5264E00BB407F /* AppDelegate.m */,
 				C0E7844C16D5264E00BB407F /* ViewController.h */,
@@ -259,9 +271,14 @@
 		C0E7845516D5264E00BB407F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WakeUpApp/WakeUpApp-Prefix.pch";
 				INFOPLIST_FILE = "WakeUpApp/WakeUpApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,9 +287,14 @@
 		C0E7845616D5264E00BB407F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WakeUpApp/WakeUpApp-Prefix.pch";
 				INFOPLIST_FILE = "WakeUpApp/WakeUpApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -297,6 +319,7 @@
 				C0E7845616D5264E00BB407F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

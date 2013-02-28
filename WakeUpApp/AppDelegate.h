@@ -1,11 +1,3 @@
-//
-//  AppDelegate.h
-//  WakeUpApp
-//
-//  Created by Shinichi Noda on 2013/02/21.
-//
-//
-
 #import <UIKit/UIKit.h>
 
 @class ViewController;
